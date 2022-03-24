@@ -1,0 +1,129 @@
+
+#main{
+  background-color: rgb(240, 218, 208);
+  font-family: Arial, Helvetica, sans-serif;
+}
+h3{
+    text-align: center
+}
+.source{
+    padding-bottom: 50px;
+    margin: 10px; 
+    margin-top: 25px;
+}
+input[type=checkbox]
+{
+    margin-left: 15px;
+}
+input[type=text]
+{
+    border: solid rgb(83, 83, 199);
+    border-radius: 8px;
+}
+
+input[type=number]
+{
+    border: solid rgb(83, 83, 199);
+    border-radius: 8px;
+}
+
+textarea{
+    border: solid rgb(83, 83, 199);
+    border-radius: 10px;
+}
+
+#isbn{
+    display:none; 
+    width:50%;
+    margin: 10px;
+    padding: 2px;
+    padding-left: 10px;
+    background-color: rgb(167, 248, 237) 
+}
+
+#newspaper_text{
+    display:none;
+    width:50%;
+    margin: 10px;
+    padding: 2px;
+    padding-left: 10px;  
+    background-color: rgb(167, 248, 237)
+}
+#url_text{
+    display:none;
+    width:50%;
+    margin: 10px;
+    padding: 2px;
+    padding-left: 10px;
+    background-color: rgb(167, 248, 237)
+}
+#journal_text{
+    display:none;
+    width:50%;
+    margin: 10px;
+    padding: 2px;
+    padding-left: 10px;
+    background-color: rgb(167, 248, 237)
+
+}
+#magazine_text{
+    display:none;
+    width:50%;
+    margin: 10px;
+    padding: 2px;
+    padding-left: 10px;
+    background-color: rgb(167, 248, 237)
+}
+#others_text{
+    display:none;
+    width:50%;
+    padding: 2px;
+    padding-left: 10px;
+    margin: 10px;
+    background-color: rgb(167, 248, 237)
+}
+#submit{
+    display:block;
+    margin: 10px;
+}
+#book1:after{
+    content: " *";
+    color:red;
+    
+}
+#check_isbn{
+    display:none;
+    height:35px;
+    margin-top: 5px;
+}
+#check_url{
+    display:none;
+    height:35px;
+    margin-top: 5px;
+}
+#unvalid{
+    display: none;
+    color:red;
+    margin-left: 10px;
+    text-align: center;
+    margin-top: 15px;
+}
+#valid{
+    display: none;
+    color:green;
+    margin-left: 10px;
+    text-align: center;
+    margin-top: 15px;
+}
+#book_related{
+    display: flex;
+    margin-right:30px;
+}
+#url_related{
+    display: flex;
+    margin-right:30px;
+}
+#enter_quote::after{
+    content: "*";
+    color: red;
+}

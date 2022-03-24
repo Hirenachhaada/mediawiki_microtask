@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroTask 2</title>
+    <link rel="stylesheet" href="microtask2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body id="main">
+   
+        <div >
+            <h3>Forms for source</h3>
+            <p>Follow the following methods to provide a source for your edit request</p>
+            <ul>
+               <!-- <li>Enter your log in details</li>
+                <li>Choose the edit request for which you want to provide source </li>-->
+                <li>Checkout the way you want to provide the source</li>
+                <li>Accordingly fill the asked details</li>
+                <li> Enter soem quote </li>
+                <li> Quote is some information from the source you provided</li>
+                <li> Then submit</li>
+                <li> Great you will be done with your source submission for your edit request</li>
+            </ul>
+            <div class="container">
+            <div class="source">
+                <h5> Checkout the way you want to provide the Source as</h5>
+                <input type="checkbox"  id="book" onclick="active_isbn()">Book ISBN
+                <input type="checkbox" id="url_checkbox" onclick="active_url()"> Website URL
+                <input type="checkbox" id="newspaper_checkbox" onclick="active_newspaper()"> Newspaper Article
+                <input type="checkbox" id="journal_checkbox"  onclick="active_journal()"> Scientific journal Article 
+                <input type="checkbox" id="magazine_checkbox" onclick="active_magazine()"> Magazine
+                <input type="checkbox" id="others_checkbox" onclick="active_others()"> Others
+                <div id="book_related"><input type ="number"  id="isbn" 
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="13" minlength="13" placeholder="Enter ISBN code of book only 13 digit">
+                <button class="btn btn-primary" id="check_isbn" onclick=" check_isbn()"> Check isbn</button><h4 id="unvalid">Unvalid</h4>
+                <h4 id="valid">Valid</h4>
+                 </div>
+                 <div id="url_related">
+                <input  type="text" id="url_text" placeholder="Enter valid url">
+                 <button class="btn btn-primary" id="check_url" onclick=" check_url()">Check url</button>
+                </div>
+                <Textarea id="newspaper_text" rows="5" placeholder="Enter the details like newspaper name date of issue and pg-no."></Textarea>
+                <Textarea id="journal_text" rows="5" placeholder="Enter the details like journal name date of issue and pg-no."></Textarea>
+                <Textarea id="magazine_text" rows="5" placeholder="Enter the details like magazine name date of issue and pg-no."></Textarea>
+                <Textarea id="others_text" rows="5" placeholder="Enter the details"></Textarea>
+                
+                &nbsp;
+                <h6 id="enter_quote"> Enter Some Quote </h6>
+                <textarea id="quote"rows="5"placeholder="Write your quote here" style="width:700px; padding:8px"></textarea>
+                <button class="btn btn-primary" id="check_quote" onclick=" quoted()"> Check quotes</button> 
+                <button class="btn btn-success" id="submit" onclick="submitted()"> Submit</button>
+            </div>
+        </div>
+        </div>
+
+        
+        <script src="microtask2.js"></script>
+
+    </body>
+</html>
