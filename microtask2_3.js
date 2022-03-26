@@ -22,14 +22,17 @@ function active_newspaper()
 {
     let newspaper_check=document.getElementById("newspaper_checkbox");
     let newspaper_text=document.getElementById("newspaper_text");
+    let check_newspaper=document.getElementById("check_newspaper");
    
     if(newspaper_check.checked == true)
     {
         newspaper_text.style.display="block";
+        check_newspaper.style.display="flex";
         
     }
     else{
         newspaper_text.style.display="none";
+        check_newspaper.style.display="none";
     }
 }
 function active_url()
@@ -51,39 +54,48 @@ function active_url()
 function active_journal()
 {
     let journal_check=document.getElementById("journal_checkbox");
-    let journal_text=document.getElementById("journal_text")
+    let journal_text=document.getElementById("journal_text");
+    let check_journal=document.getElementById("check_journal");
     if(journal_check.checked == true)
     {
         journal_text.style.display="block";
+        check_journal.style.display="flex";
     }
     else{
         journal_text.style.display="none";
+        check_journal.style.display="none";
     }
 }
 
 function active_magazine()
 {
     let magazine_check=document.getElementById("magazine_checkbox");
-    let magazine_text=document.getElementById("magazine_text")
+    let magazine_text=document.getElementById("magazine_text");
+    let check_magazine=document.getElementById("check_magazine");
     if(magazine_check.checked == true)
     {
         magazine_text.style.display="block";
+        check_magazine.style.display="flex";
     }
     else{
         magazine_text.style.display="none";
+        check_magazine.style.display="none";
     }
 }
 
 function active_others()
 {
     let others_check=document.getElementById("others_checkbox");
-    let others_text=document.getElementById("others_text")
+    let others_text=document.getElementById("others_text");
+    let check_others=document.getElementById("check_others");
     if(others_check.checked == true)
     {
         others_text.style.display="block";
+        check_others.style.display="flex";
     }
     else{
         others_text.style.display="none";
+        check_others.style.display="none";
     }
 }
 
@@ -124,7 +136,7 @@ function check_url(){
     {
         alert("Your url is not of type https ")
     }
-     if(url_text.substring(0,8) == "https://" && url_text.substring(0,29) != "https://www.google.com/search" &&  url_text.length>20 && url_text.substring(0,22) != "https://www.google.com")
+    if(url_text.substring(0,8) == "https://" && url_text.substring(0,29) != "https://www.google.com/search" &&  url_text.length>20 && url_text.substring(0,22) != "https://www.google.com")
     {
         console.log(url_text.length)
         alert("valid url")
@@ -134,12 +146,47 @@ function check_url(){
         console.log(url_text.length)
         alert("unvalid url")
     }
-      if(url_text.substring(0,29) == "https://www.google.com/search" || url_text.substring(0,22) == "https://www.google.com")
+    if(url_text.substring(0,29) == "https://www.google.com/search" || url_text.substring(0,22) == "https://www.google.com")
     {
         alert("Google search websites are not allowed")
     }
     
-
+}
+function check_newspaper(){
+    let newspaper_text=document.getElementById("newspaper_text").value;
+    if(newspaper_text.length<15){
+        alert("Enter a big enough proper source")
+    }
+    else {
+        alert("Valid source")
+    }
+}
+function check_journal(){
+    let journal_text=document.getElementById("journal_text").value;
+    if(journal_text.length<15){
+        alert("Enter a big enough proper source")
+    }
+    else {
+        alert("Valid source")
+    }
+}
+function check_magazine(){
+    let magazine_text=document.getElementById("magazine_text").value;
+    if(magazine_text.length<15){
+        alert("Enter a big enough proper source")
+    }
+    else {
+        alert("Valid source")
+    }
+}
+function check_others(){
+    let others_text=document.getElementById("others_text").value;
+    if(others_text.length<15){
+        alert("Enter a big enough proper source")
+    }
+    else {
+        alert("Valid source")
+    }
 }
 
 
@@ -151,13 +198,18 @@ let others_check=document.getElementById("others_checkbox");
 let submit=document.getElementById("submit")
 
 function submitted(){
-if(book.checked==true ||newspaper_check.checked==true || url_check.checked==true ||journal_check.checked==true || magazine_check.checked==true || others_check.checked==true)
+    let quotes=document.getElementById('quote').value;
+if(quotes!="" && (book.checked==true ||newspaper_check.checked==true || url_check.checked==true ||journal_check.checked==true || magazine_check.checked==true || others_check.checked==true))
 {
     window.location.reload();
 }
-else{
+if(quotes==""){
+    alert("ALERT!!!!! Please enter the quote")
+}
+if(book.checked==false &&newspaper_check.checked==false && url_check.checked==false &&journal_check.checked==false && magazine_check.checked==false && others_check.checked==false){
     alert("ALERT!!!!! Please select atleast one checkbox and provide source to submit")
 }
+
 }
 
 function quoted() {
@@ -167,39 +219,5 @@ function quoted() {
         
         alert("Enter atleast a big enough quote which can give idea about your edit request")
     }
-    /*if(quotes.length>15){
-        alert("Valid quotes")
-    }*/
    
 }
-
-
-
-
-
-/*let str=document.getElementById("url_text").value;
-
-function validURL(str) {
-    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-      '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-      '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-      '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-    return !!pattern.test(str);
-  }*/
-
-  /*
-    To check the word entered in the quotes are from english dictionary or not
-
-   if you really want to check the input against any english word the "English Dictionary" the array of words would
-    be realy huge and, as it would be loaded along the Javascript, the Javascript would become a file too big 
-    to download along with your web page.
-
-In that case, you'd need a database (let say MySQL) to store the words and a script that runs on the server (let's say PHP)
- that you pass the word with an ajax call. The script would make a query on the DB to see if the word exists and give back 
- the result to your javascript as the ajax response (1=english word 0=word not on the dictionary)
-  
- 
- */ 
-
