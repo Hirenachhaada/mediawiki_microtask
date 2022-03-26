@@ -219,5 +219,8 @@ function quoted() {
         
         alert("Enter atleast a big enough quote which can give idea about your edit request")
     }
+    else{
+        alert("valid quote")
+    }
    
 }
