@@ -124,7 +124,7 @@ function check_url(){
     {
         alert("Your url is not of type https ")
     }
-    if(url_text.substring(0,8) == "https://" && url_text.substring(0,29) != "https://www.google.com/search" &&  url_text.length>20)
+     if(url_text.substring(0,8) == "https://" && url_text.substring(0,29) != "https://www.google.com/search" &&  url_text.length>20 && url_text.substring(0,22) != "https://www.google.com")
     {
         console.log(url_text.length)
         alert("valid url")
@@ -134,7 +134,7 @@ function check_url(){
         console.log(url_text.length)
         alert("unvalid url")
     }
-    if(url_text.substring(0,29) == "https://www.google.com/search" )
+      if(url_text.substring(0,29) == "https://www.google.com/search" || url_text.substring(0,22) == "https://www.google.com")
     {
         alert("Google search websites are not allowed")
     }
