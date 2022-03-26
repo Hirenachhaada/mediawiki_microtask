@@ -101,6 +101,26 @@ textarea{
     height:35px;
     margin-top: 5px;
 }
+#check_newspaper{
+    display:none;
+    height:35px;
+    margin-top: 5px;
+}
+#check_journal{
+    display:none;
+    height:35px;
+    margin-top: 5px;
+}
+#check_magazine{
+    display:none;
+    height:35px;
+    margin-top: 5px;
+}
+#check_others{
+    display:none;
+    height:35px;
+    margin-top: 5px;
+}
 #unvalid{
     display: none;
     color:red;
@@ -123,7 +143,27 @@ textarea{
     display: flex;
     margin-right:30px;
 }
+#newspaper_related{
+    display: flex;
+    margin-right:30px;
+}
+#journal_related{
+    display: flex;
+    margin-right:30px;
+}
+#magazine_related{
+    display: flex;
+    margin-right:30px;
+}
+#others_related{
+    display: flex;
+    margin-right:30px;
+}
 #enter_quote::after{
     content: "*";
     color: red;
+}
+#submit:hover{
+    width:110px;
+
 }
