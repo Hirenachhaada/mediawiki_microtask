@@ -26,12 +26,12 @@
             <div class="container">
             <div class="source">
                 <h5> Checkout the way you want to provide the Source as</h5>
-                <input type="checkbox"  id="book" onclick="active_isbn()">Book ISBN
-                <input type="checkbox" id="url_checkbox" onclick="active_url()"> Website URL
-                <input type="checkbox" id="newspaper_checkbox" onclick="active_newspaper()"> Newspaper Article
-                <input type="checkbox" id="journal_checkbox"  onclick="active_journal()"> Scientific journal Article 
-                <input type="checkbox" id="magazine_checkbox" onclick="active_magazine()"> Magazine
-                <input type="checkbox" id="others_checkbox" onclick="active_others()"> Others
+                <input type="checkbox"  id="book" onclick="active_isbn()"><label for="book" style="cursor:pointer">Book ISBN</label>
+                <input type="checkbox" id="url_checkbox" name="url" onclick="active_url()"> <label for="url_checkbox" style="cursor:pointer">URL</label> 
+                <input type="checkbox" id="newspaper_checkbox" onclick="active_newspaper()"> <label for="newspaper_checkbox" style="cursor:pointer">Newspaper Article</label>
+                <input type="checkbox" id="journal_checkbox"  onclick="active_journal()"> <label for="journal_checkbox" style="cursor:pointer">Scientific journal Article </label>
+                <input type="checkbox" id="magazine_checkbox" onclick="active_magazine()"> <label for="magazine_checkbox" style="cursor:pointer">Magazine</label>
+                <input type="checkbox" id="others_checkbox" onclick="active_others()"> <label for="others_checkbox" style="cursor:pointer">Others</label>
                 <div id="book_related"><input type ="number"  id="isbn" 
                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                 maxlength="13" minlength="13" placeholder="Enter ISBN code of book only 13 digit">
@@ -62,6 +62,9 @@
                 <h6 id="enter_quote"> Enter Some Quote </h6>
                 <textarea id="quote"rows="5"placeholder="Write your quote here" style="width:700px; padding:8px" required></textarea>
                 <button class="btn btn-primary" id="check_quote" onclick=" quoted()"> Check quotes</button> 
+                <p>
+                   <input type="file" style="margin-right: -40px;">Provide source as some file 
+                </p>
                 <button class="btn btn-success" id="submit" onclick="submitted()"> Submit <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
                   </svg></button>
@@ -71,7 +74,7 @@
         </div>
 
         
-        <script src="microtask2_3.js"></script>
+        <script src="microtask2.js"></script>
 
     </body>
 </html>
