@@ -7,6 +7,11 @@ function active_isbn()
     let check_isbn=document.getElementById("check_isbn");
     let unvalid=document.getElementById("unvalid");
     let valid=document.getElementById("valid");
+        if(book.checked==false)
+    {
+        valid.style.display="none";
+        unvalid.style.display="none";
+    }
     
     if(book.checked == true)
     {
